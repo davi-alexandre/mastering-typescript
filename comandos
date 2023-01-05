@@ -1,0 +1,12 @@
+tsc --init      gera tsconfig.json
+tsc             transpila a js
+tsc -w          watch mode => recompila tudo havendo mudanças
+
+npm init        cria packages.json, usado
+                para recordar as dependências baixadas a node_modules
+                e recriar node_modules com > npm install
+
+npm install --save-dev @types/inquirer
+  instala as declarações de tipos do pacote inquirer (escrito em js)
+  --save-dev significa não estar no produto final
+
