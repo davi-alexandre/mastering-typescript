@@ -35,8 +35,8 @@ function addWithUnion(
 addWithUnion(1, 2)
 
 // [x] TYPE ALIASES
-type StringOrNumber = string | number
-(arg: StringOrNumber) => {console.log(typeof arg)}
+type stringOrNumber = string | number
+(arg: stringOrNumber) => {console.log(typeof arg)}
 
 // [x] ENUM
 // use const antes da declaração
