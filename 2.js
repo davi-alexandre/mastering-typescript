@@ -18,6 +18,22 @@ function printObject(obj) {
 }
 printObject(1);
 printObject("string value");
+const badUser = {
+    id: 1,
+    firstName: "Alex",
+    lastName: "Brooks",
+    image: "image-url",
+};
+// access only to intersection between String and ICustomImage
+// badUser.image. -> (toString, valueOf)
+const goodUser = {
+    id: 1,
+    firstName: "Davi",
+    lastName: "Alexandre",
+    image: "image-url",
+};
+// all String methods and properties available
+goodUser.image.toLowerCase();
 // [x] TYPE GUARDS === type check
 function addWithUnion(arg1, arg2) {
     // ERROR: arg1 + arg2;
@@ -27,6 +43,14 @@ function addWithUnion(arg1, arg2) {
     return arg1.toString() + arg2.toString();
 }
 addWithUnion(1, 2);
+let myPet;
+function isPet(obj) {
+    if (obj != null && typeof obj === "object")
+        return "petName" in obj;
+    return false;
+}
+if (isPet(myPet))
+    console.log(myPet.petName); // autocomplete works
 (arg) => { console.log(typeof arg); };
 // PRIMITIVES
 // for no defined value

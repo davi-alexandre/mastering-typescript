@@ -22,6 +22,39 @@ function printObject(obj: string | number) {
 printObject(1)
 printObject("string value")
 
+// [x] SATISFIES keyword
+interface ICustomImage {
+	data: string;
+	width: number;
+	height: number;
+}
+type UserImage = string | ICustomImage;
+interface IUser {
+	id: number;
+	firstName: string;
+	lastName: string;
+	image: UserImage;
+}
+
+const badUser: IUser = {
+	id: 1,
+	firstName: "Alex",
+	lastName: "Brooks",
+	image: "image-url",
+};
+// access only to intersection between String and ICustomImage
+// badUser.image. -> (toString, valueOf)
+
+const goodUser = {
+	id: 1,
+	firstName: "Davi",
+	lastName: "Alexandre",
+	image: "image-url",
+} satisfies IUser;
+// all String methods and properties available
+goodUser.image.toLowerCase();
+
+
 // [x] TYPE GUARDS === type check
 function addWithUnion(
 	arg1: string | number,
@@ -33,6 +66,22 @@ function addWithUnion(
 	return arg1.toString() + arg2.toString();
 }
 addWithUnion(1, 2)
+
+
+let myPet! : unknown;
+interface IPet {
+    petName: string;
+    species: string;
+}
+function isPet(obj: unknown) : obj is IPet // [x] type guard: asserting type for autocompletion after call
+{
+    if (obj != null && typeof obj === "object")
+        return "petName" in obj;
+    return false;
+}
+if (isPet(myPet))
+    console.log(myPet.petName) // autocomplete works
+
 
 // [x] TYPE ALIASES
 type stringOrNumber = string | number
