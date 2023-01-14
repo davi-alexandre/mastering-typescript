@@ -1,4 +1,5 @@
 # não pode ser commited
 /node_modules/
 
-/outDir
+# javascript gerado pelo typescript
+/src/
