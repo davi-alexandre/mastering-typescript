@@ -4,5 +4,6 @@
             "when": "$(basename).ts"
         },
         "**/*.js.map": true,
-    }
+    },
+    "livePreview.defaultPreviewPath": "/home/penguin/Projects/mastering-typescript/dist/index.html"
 }
