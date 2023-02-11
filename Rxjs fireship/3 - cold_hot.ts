@@ -1,6 +1,6 @@
 import * as Rx from 'rxjs';
 import { connect } from 'rxjs/operators';
-import { print } from './common';
+import print from './print';
 
 
 // [x] COLD observable = data created inside [unicast]

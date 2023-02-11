@@ -1,5 +1,5 @@
 import * as Rx from 'rxjs';
-import { print } from './common';
+import print from './print';
 
 
 // OBSERVABLE FROM PROMISES 
@@ -20,7 +20,7 @@ let interval = Rx.interval(2000);
 interval.subscribe(count => print(count))
 
 // (stream) OBSERVABLE OF any data
-let dataStream = Rx.of("any static value", ["I", "Want"], 23, false, {
-	very: "cool",
-});
+let dataStream = Rx.of(
+    "any static value", ["I", "Want"],
+    23, false, { very: "cool", });
 dataStream.subscribe((val) => print(val));

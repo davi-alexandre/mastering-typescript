@@ -1,5 +1,5 @@
 import * as Rx from 'rxjs';
-import { print } from './common';
+import print from './print';
 
 
 // [x]
